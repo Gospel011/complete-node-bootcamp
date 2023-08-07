@@ -8,5 +8,6 @@ fs.readFile(
         // console.log(__dirname);
     },
     );
-
-console.log('Reading file...');
+    
+    
+    console.log('Reading file...');

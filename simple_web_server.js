@@ -3,6 +3,7 @@ const http = require('http');
 const fs = require('fs');
 const url = require('url');
 const replaceAllTemplates = require(`${__dirname}/modules/replace_all_template.js`);
+const select_display_product = require(`${__dirname}/modules/select_display_product.js`);
 
 
 const template_overview = fs.readFileSync(`${__dirname}/complete-node-bootcamp/node-farm/starter/templates/template_overview.html`, 'utf-8')
@@ -13,18 +14,7 @@ const products = fs.readFileSync(`${__dirname}/complete-node-bootcamp/node-farm/
 const products_object = JSON.parse(products);
 
 
-// FUNCTIONS
 
-const select_display_product = (products_object, id) => {
-    
-    for (let i=0; i<products_object.length; i++) {
-        if (products_object[i].id == id) {
-            return products_object[i];
-        } else{
-            continue;
-        }
-    }
-}
 
 
 
