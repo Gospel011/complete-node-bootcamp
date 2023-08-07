@@ -4,7 +4,8 @@
   "description": "Learning nodejs. In the section about npm currently.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon simple_web_server.js"
   },
   "repository": {
     "type": "git",
