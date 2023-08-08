@@ -82,7 +82,7 @@ const server = http.createServer((req, res) => {
         display_product = select_display_product(products_object, product_url)
         output = replaceAllTemplates(template_product, display_product)
         // console.log(display_product);
-
+        
         res.writeHead(
            statusCode = 200,
             headers = {
