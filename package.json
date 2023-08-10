@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "set UV_THREADPOOL_SIZE=5 & node ./the-eventloop-and-eventemmiters/event-loop.js"
+    "start": "set UV_THREADPOOL_SIZE=5 & node ./the-eventloop-and-eventemmiters/event-loop.js",
+    "server": "nodemon node ./the-eventloop-and-eventemmiters/event-emmiter.js"
   },
   "repository": {
     "type": "git",
