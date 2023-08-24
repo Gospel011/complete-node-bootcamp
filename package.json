@@ -6,8 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "set UV_THREADPOOL_SIZE=5 & node ./the-eventloop-and-eventemmiters/event-loop.js",
-    "server": "nodemon node ./the-eventloop-and-eventemmiters/event-emmiter.js",
-    "app": "cls & nodemon ./express_api_project/app.js"
+    "server": "cls & nodemon ./express_api_project/server.js"
   },
   "repository": {
     "type": "git",
@@ -23,6 +22,7 @@
   },
   "homepage": "https://github.com/Gospel011/complete-node-bootcamp#readme",
   "dependencies": {
+    "dotenv": "^16.3.1",
     "express": "^4.18.2",
     "morgan": "^1.10.0",
     "slugify": "^1.6.6",

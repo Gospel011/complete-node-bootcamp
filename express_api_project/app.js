@@ -1,14 +1,25 @@
+const fs = require('fs');
 const express = require('express');
 const morgan = require('morgan');
 const app = express();
 app.use(express.json());
-app.use(morgan('dev'));
+
+
+console.log(`prcss == ${process.env.NODE_ENV == 'development'}`)
+if (process.env.NODE_ENV == 'development') {
+  console.log('Using morgan');
+  app.use(morgan('dev'));
+}
+
+const toursPath = `${__dirname}/../complete-node-bootcamp/4-natours/starter/dev-data/data/tours-simple.json`;
+exports.tours = JSON.parse(fs.readFileSync(toursPath, 'utf-8'));
 
 const tourRouter = require('./routes/tour_routes');
 const userRouter = require('./routes/user_routes.js');
 
 // Top level constants
-const portNumber = 8000;
+
+console.log('Running app.js');
 
 // Middleware functions
 const addTime = (req, res, next) => {
@@ -29,6 +40,4 @@ app.use(addTime);
 app.use('/api/v1/tours', tourRouter);
 app.use('/api/v1/users', userRouter);
 
-app.listen(portNumber, () => {
-  console.log(`App is listening for requests on port ${portNumber}`);
-});
+exports.app = app;
