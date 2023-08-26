@@ -4,8 +4,7 @@ const morgan = require('morgan');
 const app = express();
 app.use(express.json());
 
-
-console.log(`prcss == ${process.env.NODE_ENV == 'development'}`)
+console.log(`process = ${process.env.NODE_ENV}`);
 if (process.env.NODE_ENV == 'development') {
   console.log('Using morgan');
   app.use(morgan('dev'));

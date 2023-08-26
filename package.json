@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "set UV_THREADPOOL_SIZE=5 & node ./the-eventloop-and-eventemmiters/event-loop.js",
     "app:prod": "set NODE_ENV=production&& cls & nodemon ./express_api_project/server.js",
-    "app:dev": "set NODE_ENV=development&& cls && nodemon ./express_api_project/server.js"
+    "app": "cls && nodemon ./express_api_project/server.js"
   },
   "repository": {
     "type": "git",
@@ -25,11 +25,14 @@
   "dependencies": {
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
+    "mongoose": "^5.13.20",
     "morgan": "^1.10.0",
     "slugify": "^1.6.6",
     "superagent": "^8.0.9"
   },
   "devDependencies": {
-    "nodemon": "^3.0.1"
+    "eslint": "^8.47.0",
+    "nodemon": "^3.0.1",
+    "prettier": "^3.0.2"
   }
 }

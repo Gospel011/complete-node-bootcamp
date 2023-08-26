@@ -1,4 +1,3 @@
-
 const express = require('express');
 const tourController = require('./../controllers/tour_controller.js');
 const {validateID, checkBody} = require('./../controllers/functions')
