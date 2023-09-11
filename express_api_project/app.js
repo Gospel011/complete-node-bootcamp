@@ -1,4 +1,4 @@
-const fs = require('fs');
+const globalErrorHandler = require('./controllers/error_controller');
 const express = require('express');
 const morgan = require('morgan');
 const app = express();
@@ -10,11 +10,12 @@ if (process.env.NODE_ENV == 'development') {
   app.use(morgan('dev'));
 }
 
-const toursPath = `${__dirname}/../complete-node-bootcamp/4-natours/starter/dev-data/data/tours-simple.json`;
-exports.tours = JSON.parse(fs.readFileSync(toursPath, 'utf-8'));
+// const toursPath = `${__dirname}/../complete-node-bootcamp/4-natours/starter/dev-data/data/tours-simple.json`;
+// exports.tours = JSON.parse(fs.readFileSync(toursPath, 'utf-8'));
 
 const tourRouter = require('./routes/tour_routes');
 const userRouter = require('./routes/user_routes.js');
+const AppError = require('./utils/error_class');
 
 // Top level constants
 
@@ -38,5 +39,16 @@ app.use(addTime);
 
 app.use('/api/v1/tours', tourRouter);
 app.use('/api/v1/users', userRouter);
+
+app.all('*', (req, res, next) => {
+  next(
+    new AppError(
+      `Cannot find the requested endpoint (${req.originalUrl}) on this server`,
+      404,
+    ),
+  );
+});
+
+app.use(globalErrorHandler);
 
 exports.app = app;

@@ -6,8 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "set UV_THREADPOOL_SIZE=5 & node ./the-eventloop-and-eventemmiters/event-loop.js",
-    "app:prod": "set NODE_ENV=production&& cls & nodemon ./express_api_project/server.js",
-    "app": "cls && nodemon ./express_api_project/server.js"
+    "server:prod": "set NODE_ENV=production&& cls & nodemon ./express_api_project/server.js",
+    "server": "cls && nodemon ./express_api_project/server.js"
   },
   "repository": {
     "type": "git",
